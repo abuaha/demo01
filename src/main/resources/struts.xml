@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.action.extension" value="ji,"></constant>
+    <package name="test1" extends="struts-default" namespace="/user">
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+        <action name="sayHi" class="com.haoj.controller.HelloAction" method="sayHi1">
+            <result name="success" type="redirectAction">returnHi</result>
+        </action>
+        <action name="returnHi" class="com.haoj.controller.HelloAction2" method="sayHi1">
+            <result name="success">/hello.jsp</result>
+        </action>
+        <action name="action3" class="com.haoj.controller.HelloAction3">
+            <result name="success">/hello.jsp</result>
+        </action>
+        <action name="action4" class="com.haoj.controller.HelloAction3" method="sayHi1">
+            <result name="success">/hello.jsp</result>
+        </action>
+    </package>
+
+</struts>
